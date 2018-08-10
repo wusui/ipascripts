@@ -1,5 +1,6 @@
 # Test RGW authentication via LDAP 
 
+```
 Usage:
-    ./runner.sh   
-
+    ./runner.sh <ceph-node> <ldap-node>
+```

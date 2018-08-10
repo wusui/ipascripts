@@ -7,15 +7,15 @@ ipa user-add rgw <<EOF
 r
 gw
 EOF
-ipa user-add tester <<EOF
-t
-ester
+ipa user-add newuser <<EOF
+new
+user
 EOF
 ipa user-mod rgw --password <<EOF
 t0pSecret
 t0pSecret
 EOF
-ipa user-mod tester --password <<EOF
+ipa user-mod newuser --password <<EOF
 t0pSecret
 t0pSecret
 EOF

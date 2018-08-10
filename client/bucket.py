@@ -17,7 +17,7 @@ conn = boto.connect_s3(
     )
 
 print boto.s3.connection.Location.EU
-bucket = conn.create_bucket('tester-new-bucket')
+bucket = conn.create_bucket('newuser-new-bucket')
 for bucket in conn.get_all_buckets():
     print "{name}\t{created}".format(
         name = bucket.name,
