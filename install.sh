@@ -12,10 +12,13 @@ if $retv; then
     iyam=`whoami`
     cpy $iyam@$1
     if [ -f secrets ]; then
-        ssh $iyam@$1 sudo /tmp/ipasetup/subscribe.sh
+        ssh $iyam@$1 sudo /tmp/ipasetup/subscribe.sh $2
+        # To DO: Should probably come up with a better "wait until up" test.
         sleep 240
     fi
     ssh $iyam@$1 rm -fr /tmp/ipasetup/secrets
-    ssh $iyam@$1 sudo /tmp/ipasetup/server/ipasetup.sh
-    ssh $iyam@$1 sudo /tmp/ipasetup/server/useradd.sh
+    cd ${2}
+    ./local.sh $iyam@$1
 fi
+ssh $1 rm -rf /tmp/ipasetup
+ssh $1 rm /tmp/unpacker.sh
