@@ -20,5 +20,5 @@ if $retv; then
     cd ${2}
     ./local.sh $iyam@$1
 fi
-ssh $1 rm -rf /tmp/ipasetup
-ssh $1 rm /tmp/unpacker.sh
+ssh $1 sudo rm -rf /tmp/ipasetup
+ssh $1 sudo rm /tmp/unpacker.sh
